@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAO", "DAO\DAO.csproj", "{F4330C8F-7E9F-4911-B1A2-92363146CDD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CONDIV_API", "CONDIV_API\CONDIV_API.csproj", "{9E72892D-D0F2-4AE0-8325-04DE5D23DFF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4330C8F-7E9F-4911-B1A2-92363146CDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4330C8F-7E9F-4911-B1A2-92363146CDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4330C8F-7E9F-4911-B1A2-92363146CDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4330C8F-7E9F-4911-B1A2-92363146CDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E72892D-D0F2-4AE0-8325-04DE5D23DFF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E72892D-D0F2-4AE0-8325-04DE5D23DFF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E72892D-D0F2-4AE0-8325-04DE5D23DFF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E72892D-D0F2-4AE0-8325-04DE5D23DFF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D05072BA-5CE5-43E7-9F4F-1FFD1C34F100}
+	EndGlobalSection
+EndGlobal
