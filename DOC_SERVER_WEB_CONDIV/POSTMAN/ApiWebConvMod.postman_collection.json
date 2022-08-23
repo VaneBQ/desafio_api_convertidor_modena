@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "45e256a0-adc7-43cd-a241-c68e93e7a8d3",
+		"name": "ApiWebConvMod",
+		"description": "StartFragment\n\nApi web en C# Core que permita convertir una moneda a otra con un tipo de cambio\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22921792"
+	},
+	"item": [
+		{
+			"name": "ObtenerToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cO_USUARIO\": \"VABU\",\r\n  \"pW_USUARIO\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44380/api/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"token"
+					]
+				},
+				"description": "Este servicio permite obtener el token para el acceso a la aplicación."
+			},
+			"response": [
+				{
+					"name": "ObtenerToken",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cO_USUARIO\": \"VABU\",\r\n  \"pW_USUARIO\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44380/api/token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 05:05:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI0OTE4N2VhNS1lZmZlLTQ5NTMtYWZmZC04MmI5OTQzY2JjZmQiLCJpYXQiOiIyMy8wOC8yMDIyIDA1OjA1OjI1IiwiSUQiOiIxIiwiVVNVQVJJTyI6IjEyMzQ1NiIsImV4cCI6MTY2MTMxNzUyNSwiaXNzIjoiSldUQXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJKV1RTZXJ2aWNlQ2xpZW50In0.ZnzDA52POT8iZsQc0Nv80Cs3EZbvYMnbU38zV38tKHg"
+				}
+			]
+		},
+		{
+			"name": "CotizarMonedaSolConDolar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIyMmMzM2UyNC1lMDNkLTQ0YzktODdmYy1lYWY3Yjc1MzdkZmQiLCJpYXQiOiIwOC8yMy8yMDIyIDAyOjM3OjIyIiwiSUQiOiIxIiwiVVNVQVJJTyI6IjEyMzQ1NiIsImV4cCI6MTY2MTMwODY0MiwiaXNzIjoiSldUQXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJKV1RTZXJ2aWNlQ2xpZW50In0.29qHM9c5Nc0fQmS0ykac-gcabSfNLMu5x-JhbbeoPxE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"iD_USUARIO\": 1,\r\n  \"iD_MONEDA_ORIGEN\": 2,\r\n  \"iD_MONEDA_DESTINO\": 1,\r\n  \"iD_CATEGORIA_CAMBIO\": 2,\r\n  \"monto\": 257\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"CONDIV_CONVERTIRMONEDA"
+					]
+				},
+				"description": "Este servicio le permite al cliente cotizar la venta/compra de sus soles o dólares. Por lo tanto, se debe tomar en cuenta los siguientes parámetros:  \nID_MONEDA_XXX  \n1 = Soles  \n2 = Dólares\n\nID_CATEGORIA_CAMBIO (Con respecto al banco)  \nEste campo lo debería calcular el sistema con respeto a lo que el banco parametrizó en el atributo Moneda de la tabla Tipo Cambio y el orden en que toma la monedas el cliente.\n\n1 = Venta  \n2 = Compra"
+			},
+			"response": [
+				{
+					"name": "TengoSol - QuieroDolar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iD_USUARIO\": 1,\r\n  \"iD_MONEDA_ORIGEN\": 1,\r\n  \"iD_MONEDA_DESTINO\": 2,\r\n  \"iD_CATEGORIA_CAMBIO\": 1,\r\n  \"monto\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_CONVERTIRMONEDA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 02:56:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 257.40\n}"
+				},
+				{
+					"name": "TengoDolar - QuieroSol",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iD_USUARIO\": 1,\r\n    \"iD_MONEDA_ORIGEN\": 2,\r\n    \"iD_MONEDA_DESTINO\": 1,\r\n    \"iD_CATEGORIA_CAMBIO\": 2,\r\n    \"monto\": 257\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_CONVERTIRMONEDA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 02:56:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 988.94\n}"
+				}
+			]
+		},
+		{
+			"name": "CotizarMonedaSolConEuro",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI1ZjkzMWM2NC02YTk2LTQ1NjItOGFiNi0wODczY2YxZWU0OTgiLCJpYXQiOiIyMi8wOC8yMDIyIDA1OjIxOjMxIiwiSUQiOiIxIiwiVVNVQVJJTyI6IjEyMzQ1NiIsImV4cCI6MTY2MTE0NjI5MSwiaXNzIjoiSldUQXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJKV1RTZXJ2aWNlQ2xpZW50In0.fLn-Vn9vUgX4DNGtP5C82mo-tShh6rl9m_TUIsVS14Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"iD_USUARIO\": 1,\r\n  \"iD_MONEDA_ORIGEN\": 1,\r\n  \"iD_MONEDA_DESTINO\": 3,\r\n  \"iD_CATEGORIA_CAMBIO\": 1,\r\n  \"monto\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"CONDIV_CONVERTIRMONEDA"
+					]
+				},
+				"description": "Este servicio le permite al cliente cotizar la venta/compra de sus soles o euros. Por lo tanto, se debe tomar en cuenta los siguientes parámetros:  \nID_MONEDA_XXX  \n1 = Soles  \n3 = Euros\n\nID_CATEGORIA_CAMBIO (Con respecto al banco)  \nEste campo lo debería calcular el sistema con respeto a lo que el banco parametrizó en el atributo Moneda de la tabla Tipo Cambio y el orden en que toma la monedas el cliente.\n\n1 = Venta  \n2 = Compra"
+			},
+			"response": [
+				{
+					"name": "TengoSol - QuieroEuro",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iD_USUARIO\": 1,\r\n  \"iD_MONEDA_ORIGEN\": 1,\r\n  \"iD_MONEDA_DESTINO\": 3,\r\n  \"iD_CATEGORIA_CAMBIO\": 1,\r\n  \"monto\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_CONVERTIRMONEDA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 04:16:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 153.85\n}"
+				},
+				{
+					"name": "TengoEuro - QuieroSol",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"iD_USUARIO\": 1,\r\n  \"iD_MONEDA_ORIGEN\": 3,\r\n  \"iD_MONEDA_DESTINO\": 1,\r\n  \"iD_CATEGORIA_CAMBIO\": 2,\r\n  \"monto\": 154\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_CONVERTIRMONEDA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_CONVERTIRMONEDA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 04:17:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 592.59\n}"
+				}
+			]
+		},
+		{
+			"name": "Mostrar Tipo Cambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJmYmQ3ZDg5OC00YjQyLTQyN2UtODM1ZS1iNjc5ZDI2YzUzMTQiLCJpYXQiOiIyMi8wOC8yMDIyIDAyOjM4OjAzIiwiSUQiOiIxIiwiVVNVQVJJTyI6IlZBQlUiLCJleHAiOjE2NjExMzY0ODMsImlzcyI6IkpXVEF1dGhlbnRpY2F0aW9uU2VydmVyIiwiYXVkIjoiSldUU2VydmljZUNsaWVudCJ9.C76KB_DaFDVcxqYUAfPkHIix2lOmZ9pVe7WO5Sc9HRs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"CONDIV_TC_TIPO_CAMBIO"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Mostrar Tipo Cambio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_TC_TIPO_CAMBIO"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 04:22:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"iD_TIPO_CAMBIO\": 1,\n        \"nO_TIPO_CAMBIO\": \"Dolar respecto al sol\",\n        \"iD_MONEDA\": 2,\n        \"iD_CATEGORIA_CAMBIO\": 1,\n        \"mO_TIPO_CAMBIO\": 3.9,\n        \"iD_CONVERTIR\": 1,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"F \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_TIPO_CAMBIO\": 2,\n        \"nO_TIPO_CAMBIO\": \"Dolar respecto al sol\",\n        \"iD_MONEDA\": 1,\n        \"iD_CATEGORIA_CAMBIO\": 2,\n        \"mO_TIPO_CAMBIO\": 3.5,\n        \"iD_CONVERTIR\": 1,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"F \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_TIPO_CAMBIO\": 5,\n        \"nO_TIPO_CAMBIO\": \"Dolar respecto al sol\",\n        \"iD_MONEDA\": 2,\n        \"iD_CATEGORIA_CAMBIO\": 1,\n        \"mO_TIPO_CAMBIO\": 3.885,\n        \"iD_CONVERTIR\": 1,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_TIPO_CAMBIO\": 6,\n        \"nO_TIPO_CAMBIO\": \"Dolar respecto al sol\",\n        \"iD_MONEDA\": 1,\n        \"iD_CATEGORIA_CAMBIO\": 2,\n        \"mO_TIPO_CAMBIO\": 3.848,\n        \"iD_CONVERTIR\": 1,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_TIPO_CAMBIO\": 9,\n        \"nO_TIPO_CAMBIO\": \"Euro respecto al sol\",\n        \"iD_MONEDA\": 2,\n        \"iD_CATEGORIA_CAMBIO\": 1,\n        \"mO_TIPO_CAMBIO\": 6.5,\n        \"iD_CONVERTIR\": 2,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_TIPO_CAMBIO\": 12,\n        \"nO_TIPO_CAMBIO\": \"Euro respecto al sol\",\n        \"iD_MONEDA\": 1,\n        \"iD_CATEGORIA_CAMBIO\": 2,\n        \"mO_TIPO_CAMBIO\": 6,\n        \"iD_CONVERTIR\": 2,\n        \"mO_UNIDAD\": 1,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:23:50.657\",\n        \"iP_ACTUALIZACION\": \"\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Historial de Cotización",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiIyMmMzM2UyNC1lMDNkLTQ0YzktODdmYy1lYWY3Yjc1MzdkZmQiLCJpYXQiOiIwOC8yMy8yMDIyIDAyOjM3OjIyIiwiSUQiOiIxIiwiVVNVQVJJTyI6IjEyMzQ1NiIsImV4cCI6MTY2MTMwODY0MiwiaXNzIjoiSldUQXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJKV1RTZXJ2aWNlQ2xpZW50In0.29qHM9c5Nc0fQmS0ykac-gcabSfNLMu5x-JhbbeoPxE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44380/api/CONDIV_TH_USUARIO_DIVISA",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"CONDIV_TH_USUARIO_DIVISA"
+					]
+				},
+				"description": "Este servicio permite obtener el historial de cotizaciones."
+			},
+			"response": [
+				{
+					"name": "Historial de Cotización",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_TH_USUARIO_DIVISA",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_TH_USUARIO_DIVISA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 04:29:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"iD_USUARIO_DIVISA\": 1,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 1,\n        \"mO_ENTRADA\": 40,\n        \"mO_SALIDA\": 156,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 10,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 257.4,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 11,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 3848,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 12,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 3848,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 13,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 500,\n        \"mO_SALIDA\": 128.7,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 14,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 3848,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 15,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 40,\n        \"mO_SALIDA\": 10.3,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T05:24:27.95\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 16,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 9,\n        \"mO_ENTRADA\": 20,\n        \"mO_SALIDA\": 3.08,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T00:24:56.18\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T00:24:56.18\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 17,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 40,\n        \"mO_SALIDA\": 10.3,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-23T02:56:51.793\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-23T02:56:51.793\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 18,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 40,\n        \"mO_SALIDA\": 10.3,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:07:08.987\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:07:08.987\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 19,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 40,\n        \"mO_SALIDA\": 10.3,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:09:32.35\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:09:32.353\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 20,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 400,\n        \"mO_SALIDA\": 1539.2,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:11:43.413\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:11:43.413\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 21,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 4050,\n        \"mO_SALIDA\": 1042.47,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:12:03.1\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:12:03.1\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 22,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 5,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 257.4,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:13:46.44\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:13:46.44\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 23,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 257,\n        \"mO_SALIDA\": 988.94,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:14:33.71\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:14:33.71\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 24,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 9,\n        \"mO_ENTRADA\": 1000,\n        \"mO_SALIDA\": 153.85,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:16:04.48\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:16:04.48\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 25,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 154,\n        \"mO_SALIDA\": 592.59,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:17:13.803\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:17:13.803\",\n        \"iP_ACTUALIZACION\": \"\"\n    },\n    {\n        \"iD_USUARIO_DIVISA\": 26,\n        \"iD_USUARIO\": 1,\n        \"iD_TIPO_CAMBIO\": 6,\n        \"mO_ENTRADA\": 154,\n        \"mO_SALIDA\": 592.59,\n        \"eS_REGISTRO\": \"A \",\n        \"uS_CREACION\": \"\",\n        \"fE_CREACION\": \"2022-08-22T23:29:48.91\",\n        \"iP_CREACION\": \"\",\n        \"uS_ACTUALIZACION\": \"\",\n        \"fE_ACTUALIZACION\": \"2022-08-22T23:29:48.913\",\n        \"iP_ACTUALIZACION\": \"\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "ActualizarTipoCambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI0OTE4N2VhNS1lZmZlLTQ5NTMtYWZmZC04MmI5OTQzY2JjZmQiLCJpYXQiOiIyMy8wOC8yMDIyIDA1OjA1OjI1IiwiSUQiOiIxIiwiVVNVQVJJTyI6IjEyMzQ1NiIsImV4cCI6MTY2MTMxNzUyNSwiaXNzIjoiSldUQXV0aGVudGljYXRpb25TZXJ2ZXIiLCJhdWQiOiJKV1RTZXJ2aWNlQ2xpZW50In0.ZnzDA52POT8iZsQc0Nv80Cs3EZbvYMnbU38zV38tKHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nO_TIPO_CAMBIO\": \"0\",\r\n    \"iD_MONEDA\": 2,\r\n    \"iD_CATEGORIA_CAMBIO\": 1,\r\n    \"mO_TIPO_CAMBIO\": 3.98,\r\n    \"iD_CONVERTIR\": 1,\r\n    \"mO_UNIDAD\": 1\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44380",
+					"path": [
+						"api",
+						"CONDIV_TC_TIPO_CAMBIO"
+					]
+				},
+				"description": "Este servicio permite actualizar el tipo de cambio de las monedas. Por lo tanto, se debe tomar en cuenta los siguientes parámetros:\n\n*   \"iD_MONEDA\": Id de la moneda representa a la moneda inicio de la consulta de cotización del usuario. Ejemplo:  \n    Moneda Inicio dólar = Representa una Venta de dólares para el banco.  \n    Moneda Inicio Soles = Representa una Compra de dólares para el Banco.\n*   \"iD_CATEGORIA_CAMBIO\": 1: Venta y 2: Compra,\n*   \"mO_TIPO_CAMBIO\": Factor del tipo de cambio de la moneda fuerte, ejemplo: Dolar.\n*   \"iD_CONVERTIR\": id del Convertidor ."
+			},
+			"response": [
+				{
+					"name": "Venta-Dolares",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"nO_TIPO_CAMBIO\": \"0\",\r\n    \"iD_MONEDA\": 2,\r\n    \"iD_CATEGORIA_CAMBIO\": 1,\r\n    \"mO_TIPO_CAMBIO\": 3.98,\r\n    \"iD_CONVERTIR\": 1,\r\n    \"mO_UNIDAD\": 1\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_TC_TIPO_CAMBIO"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Location",
+							"value": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO/14"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 05:41:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"iD_TIPO_CAMBIO\": 14,\n    \"nO_TIPO_CAMBIO\": \"0\",\n    \"iD_MONEDA\": 2,\n    \"iD_CATEGORIA_CAMBIO\": 1,\n    \"mO_TIPO_CAMBIO\": 3.98,\n    \"iD_CONVERTIR\": 1,\n    \"mO_UNIDAD\": 1,\n    \"eS_REGISTRO\": \"A\",\n    \"uS_CREACION\": \"\",\n    \"fE_CREACION\": \"2022-08-23T00:41:50.4173485-05:00\",\n    \"iP_CREACION\": \"\",\n    \"uS_ACTUALIZACION\": \"\",\n    \"fE_ACTUALIZACION\": \"2022-08-23T00:41:50.4173508-05:00\",\n    \"iP_ACTUALIZACION\": \"\"\n}"
+				},
+				{
+					"name": "Compra-Dolares",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nO_TIPO_CAMBIO\": \"0\",\r\n    \"iD_MONEDA\": 1,\r\n    \"iD_CATEGORIA_CAMBIO\": 2,\r\n    \"mO_TIPO_CAMBIO\": 3.70,\r\n    \"iD_CONVERTIR\": 1,\r\n    \"mO_UNIDAD\": 1\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44380",
+							"path": [
+								"api",
+								"CONDIV_TC_TIPO_CAMBIO"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Location",
+							"value": "https://localhost:44380/api/CONDIV_TC_TIPO_CAMBIO/15"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Aug 2022 05:44:32 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"iD_TIPO_CAMBIO\": 15,\n    \"nO_TIPO_CAMBIO\": \"0\",\n    \"iD_MONEDA\": 1,\n    \"iD_CATEGORIA_CAMBIO\": 2,\n    \"mO_TIPO_CAMBIO\": 3.7,\n    \"iD_CONVERTIR\": 1,\n    \"mO_UNIDAD\": 1,\n    \"eS_REGISTRO\": \"A\",\n    \"uS_CREACION\": \"\",\n    \"fE_CREACION\": \"2022-08-23T00:44:32.4178182-05:00\",\n    \"iP_CREACION\": \"\",\n    \"uS_ACTUALIZACION\": \"\",\n    \"fE_ACTUALIZACION\": \"2022-08-23T00:44:32.4178194-05:00\",\n    \"iP_ACTUALIZACION\": \"\"\n}"
+				}
+			]
+		}
+	]
+}

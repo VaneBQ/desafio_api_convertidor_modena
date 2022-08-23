@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5qn4rmTYfA/VqaF3QrhE1ajIjhbYYptM+bRik1iOXEQ5+INY2bw/7yfYiG3uzwZ8wOcFN245G/ZmMlOBxSGmDQ==",
+  "dgSpecHash": "RtKoEeXKYGJ2V8/WC2Kn1sNekglWnZIR4YJilL4hoHiHXMxTYIITk1BAAX8GZsB5iNmAYFxBhuRNMS7WNUvS1w==",
   "success": true,
-  "projectFilePath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\CONDIV_API\\CONDIV_API.csproj",
+  "projectFilePath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\CONDIV_API\\CONDIV_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alber\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alber\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

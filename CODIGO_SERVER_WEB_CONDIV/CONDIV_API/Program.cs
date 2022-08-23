@@ -13,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    string DockerHostMachineIpAddress = Dns.GetHostAddresses("host.docker.internal")[0].ToString();
+    string DockerHostMachineIpAddress = "localhost";
+    try { DockerHostMachineIpAddress = Dns.GetHostAddresses("host.docker.internal")[0].ToString(); } catch { }
+    
     //string DockerHostMachineIpAddress = "192.168.100.43";
     //var list = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
     //DockerHostMachineIpAddress = list.FirstOrDefault(x => x.AddressFamily == AddressFamily.InterNetwork).ToString();

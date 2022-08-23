@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace API.BOL
+namespace CONDIV_API.BOL
 {
     public class CONDIV_TOKEN
     {
@@ -27,7 +27,7 @@ namespace API.BOL
                 _configuration.GetSection("Jwt")["Issuer"],
                 _configuration.GetSection("Jwt")["Audience"],
                 claims,
-                expires: DateTime.UtcNow.AddMinutes(10),
+                expires: DateTime.UtcNow.AddDays(1),
                 signingCredentials: signIn);
             var tokenHandler = new JwtSecurityTokenHandler();
             token_retorno = tokenHandler.WriteToken(token);

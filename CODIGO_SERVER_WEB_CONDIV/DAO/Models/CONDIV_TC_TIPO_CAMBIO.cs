@@ -12,6 +12,8 @@ namespace DAO.Models
         [Key]
         public int ID_TIPO_CAMBIO { get; set; }
         public string NO_TIPO_CAMBIO { get; set; }
+        public int ID_MONEDA { get; set; }
+
         public int ID_CATEGORIA_CAMBIO { get; set; }
         public decimal MO_TIPO_CAMBIO { get; set; }
         public int ID_CONVERTIR { get; set; }

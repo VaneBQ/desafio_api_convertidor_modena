@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xjdjxR421X4l4q3+6owy+i+m27dzeMNs3RTDGcUIvFjyjPyj/zKt7WNcqY5+CbUBLG7fVDnBflVqPKRkicMjnA==",
+  "dgSpecHash": "iRVEqxg2aCW2dBelfteRoQSfWVlSxh3VBRAGikxRddcnYeTlolrOkr1XT3BoGHjjlfw0oI3z7B+qn4cNOpmt4Q==",
   "success": true,
-  "projectFilePath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\DAO.csproj",
+  "projectFilePath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\DAO.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

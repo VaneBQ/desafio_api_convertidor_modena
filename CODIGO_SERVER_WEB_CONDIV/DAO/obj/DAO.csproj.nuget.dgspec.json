@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\DAO.csproj": {}
+    "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\DAO.csproj": {}
   },
   "projects": {
-    "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\DAO.csproj": {
+    "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\DAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\DAO.csproj",
+        "projectUniqueName": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\DAO.csproj",
         "projectName": "DAO",
-        "projectPath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\DAO.csproj",
+        "projectPath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\DAO.csproj",
         "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
-        "outputPath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_WEB_API_CONDIV\\DAO\\obj\\",
+        "outputPath": "D:\\WEB - ESTUDIO\\RETO_PARA_PROYECTO\\PROYECTO_PUNTO_NET_CORE\\desafio_api_convertidor_modena\\CODIGO_SERVER_WEB_CONDIV\\DAO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
-using API.BOL;
+using CONDIV_API.BOL;
 
 namespace API.Controllers
 {

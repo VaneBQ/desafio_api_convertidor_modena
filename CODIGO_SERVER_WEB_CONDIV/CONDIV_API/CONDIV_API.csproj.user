@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ActiveDebugProfile>Docker</ActiveDebugProfile>
+    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
     <WebStackScaffolding_ControllerDialogWidth>784</WebStackScaffolding_ControllerDialogWidth>
@@ -11,7 +11,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>API.DAL.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>D:\WEB - ESTUDIO\RETO_PARA_PROYECTO\PROYECTO_PUNTO_NET_CORE\desafio_api_convertidor_modena\CODIGO_WEB_API_CONDIV\CONDIV_API\Properties\PublishProfiles\registry.hub.docker.com_vanessabq.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\WEB - ESTUDIO\RETO_PARA_PROYECTO\PROYECTO_PUNTO_NET_CORE\desafio_api_convertidor_modena\CODIGO_SERVER_WEB_CONDIV\CONDIV_API\Properties\PublishProfiles\registry.hub.docker.com_vanessabq.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

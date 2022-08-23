@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using API.DAL;
 using DAO.Models;
 using Microsoft.AspNetCore.Authorization;
+using CONDIV_API.BOL;
 
 namespace API.Controllers
 {
@@ -42,27 +43,27 @@ namespace API.Controllers
           {
               return NotFound();
           }
-            var cONDIV_TC_TIPO_CAMBIO = await _context.CONDIV_TC_TIPO_CAMBIO.FindAsync(id);
+            var CONDIV_TC_TIPO_CAMBIO = await _context.CONDIV_TC_TIPO_CAMBIO.FindAsync(id);
 
-            if (cONDIV_TC_TIPO_CAMBIO == null)
+            if (CONDIV_TC_TIPO_CAMBIO == null)
             {
                 return NotFound();
             }
 
-            return cONDIV_TC_TIPO_CAMBIO;
+            return CONDIV_TC_TIPO_CAMBIO;
         }
 
         // PUT: api/CONDIV_TC_TIPO_CAMBIO/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCONDIV_TC_TIPO_CAMBIO(int id, CONDIV_TC_TIPO_CAMBIO cONDIV_TC_TIPO_CAMBIO)
+        public async Task<IActionResult> PutCONDIV_TC_TIPO_CAMBIO(int id, CONDIV_TC_TIPO_CAMBIO CONDIV_TC_TIPO_CAMBIO)
         {
-            if (id != cONDIV_TC_TIPO_CAMBIO.ID_TIPO_CAMBIO)
+            if (id != CONDIV_TC_TIPO_CAMBIO.ID_TIPO_CAMBIO)
             {
                 return BadRequest();
             }
 
-            _context.Entry(cONDIV_TC_TIPO_CAMBIO).State = EntityState.Modified;
+            _context.Entry(CONDIV_TC_TIPO_CAMBIO).State = EntityState.Modified;
 
             try
             {
@@ -86,16 +87,17 @@ namespace API.Controllers
         // POST: api/CONDIV_TC_TIPO_CAMBIO
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CONDIV_TC_TIPO_CAMBIO>> PostCONDIV_TC_TIPO_CAMBIO(CONDIV_TC_TIPO_CAMBIO cONDIV_TC_TIPO_CAMBIO)
+        public async Task<ActionResult<CONDIV_TC_TIPO_CAMBIO>> PostCONDIV_TC_TIPO_CAMBIO(CONDIV_TC_TIPO_CAMBIO CONDIV_TC_TIPO_CAMBIO)
         {
-          if (_context.CONDIV_TC_TIPO_CAMBIO == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.CONDIV_TC_TIPO_CAMBIO'  is null.");
-          }
-            _context.CONDIV_TC_TIPO_CAMBIO.Add(cONDIV_TC_TIPO_CAMBIO);
-            await _context.SaveChangesAsync();
+            if (_context.CONDIV_TC_TIPO_CAMBIO == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.CONDIV_TC_TIPO_CAMBIO'  is null.");
+            }
+            CONDIV_BOL_TC_TIPO_CAMBIO CONDIV_BOL_TC_TIPO_CAMBIO = new CONDIV_BOL_TC_TIPO_CAMBIO(_context);
+            await CONDIV_BOL_TC_TIPO_CAMBIO.AGREGAR_TIPO_CAMBIO(CONDIV_TC_TIPO_CAMBIO);
 
-            return CreatedAtAction("GetCONDIV_TC_TIPO_CAMBIO", new { id = cONDIV_TC_TIPO_CAMBIO.ID_TIPO_CAMBIO }, cONDIV_TC_TIPO_CAMBIO);
+
+            return CreatedAtAction("GetCONDIV_TC_TIPO_CAMBIO", new { id = CONDIV_TC_TIPO_CAMBIO.ID_TIPO_CAMBIO }, CONDIV_TC_TIPO_CAMBIO);
         }
 
         // DELETE: api/CONDIV_TC_TIPO_CAMBIO/5
@@ -106,13 +108,13 @@ namespace API.Controllers
             {
                 return NotFound();
             }
-            var cONDIV_TC_TIPO_CAMBIO = await _context.CONDIV_TC_TIPO_CAMBIO.FindAsync(id);
-            if (cONDIV_TC_TIPO_CAMBIO == null)
+            var CONDIV_TC_TIPO_CAMBIO = await _context.CONDIV_TC_TIPO_CAMBIO.FindAsync(id);
+            if (CONDIV_TC_TIPO_CAMBIO == null)
             {
                 return NotFound();
             }
 
-            _context.CONDIV_TC_TIPO_CAMBIO.Remove(cONDIV_TC_TIPO_CAMBIO);
+            _context.CONDIV_TC_TIPO_CAMBIO.Remove(CONDIV_TC_TIPO_CAMBIO);
             await _context.SaveChangesAsync();
 
             return NoContent();
